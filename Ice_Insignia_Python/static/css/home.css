@@ -1,0 +1,73 @@
+body{
+  background-color: #3b444b;
+}
+.class div{
+  width: 500px;
+  height: 150px;
+  color: white;
+  background-color: DeepSkyBlue;
+  border-radius: 6px;
+  margin: 10px;
+  position: relative;
+  left: 3%;
+  text-align: center;
+  z-index: -1;
+
+}
+
+.buttons{
+  float: left;
+}
+
+form input[type=submit]
+{
+
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: DeepSkyBlue;
+  border-radius: 6px;
+  margin: 10px;
+  position: relative;
+  left: 30%;
+}
+
+
+.screenshots div{
+
+}
+p img {
+    position: absolute;
+    left: 0px;
+
+    z-index: -1;
+}
+#images{
+  position: absolute;;
+  right: 15%;
+}
+table #WarStats{
+  padding-left: 60px;
+
+}
+#SwoStats{
+  padding-left: 60px;
+
+}
+#DruStats{
+  padding-left: 60px;
+
+}
+#PriStats{
+  padding-left: 60px;
+
+}
+#MagStats{
+  padding-left: 60px;
+
+}
+#ice{
+  font-family: fantasy;
+  text-shadow: 0 0 2px bisque;
+  color: mediumslateblue;
+}

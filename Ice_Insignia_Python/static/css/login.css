@@ -1,0 +1,96 @@
+body{
+  margin:0;
+  padding: 0;
+  background-color: #3b444b;
+}
+
+#submit{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right:0;
+  }
+h1{
+  text-align: center;
+}
+#p1{
+  color: #e50000;
+}
+#p2{
+  color:dodgerblue;
+}
+
+div{
+  width: 300px;
+  border-radius: 3px;
+  background-color: #666666;
+  margin:auto;
+
+}
+form input[type=text]{
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid DeepSkyBlue;
+  border-radius: 3px;
+}
+
+form input[type=password]{
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid DeepSkyBlue;
+  border-radius: 3px;
+}
+
+form input[type=submit]{
+
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: DeepSkyBlue;
+  border-radius: 6px;
+  margin: 10px;
+  left: 30%;
+}
+
+button{
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: DeepSkyBlue;
+  border-radius: 6px;
+  margin: 10px;
+  position: relative;
+  left: 30%;
+}
+
+button:hover
+{
+  background-color: DodgerBlue;
+}
+
+label{
+  padding-top: 30px;
+  padding-left: 20px;
+  color: white;
+}
+
+.errorLabel{
+  color: Crimson;
+  visibility: hidden;
+}
+a{
+  margin: auto;
+  color: DeepSkyBlue;
+}
+a:hover{
+  color: DodgerBlue;
+}
+.p1hov:hover{
+  color:#e50000
+}
+.p2hov:hover{
+  color:dodgerblue;
+}

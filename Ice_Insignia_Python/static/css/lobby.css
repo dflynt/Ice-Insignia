@@ -1,0 +1,107 @@
+body {
+	background-color: #3b444b;
+	overflow: hidden;
+}
+
+ #textLogWrapper {
+	margin-left: 218px;
+	margin-bottom: 2px;
+}
+
+#textLog {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	resize: none;
+}
+
+#userListWrapper {
+	width: 225px;
+	height: 100%;
+	background-color: #666666;
+	border-radius: 5px;
+	position: fixed;
+	float: left;
+	display: inline-block;
+	top: 0;
+	left: 0;
+}
+
+.vertical-menu {
+	margin-top: 25px;
+	width: 213px;
+}
+
+
+.vertical-menu button {
+	margin-left: 33%;
+}
+
+.vertical-menu a {
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	display: block;
+	font-family: Helvetica;
+	border-radius: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.vertical-menu a.active {
+	background-color: DeepSkyBlue;
+	font-weight: bold;
+}
+
+.vertical-menu a:hover {
+	background-color: #ccc;
+}
+
+input[type=text] {
+	border-radius: 5px;
+	padding-left: 2px;
+	width: 96%;
+	height: 25px;
+	font-family: Helvetica;
+}
+input[type=submit] {
+	margin-left: 5px;
+	border: solid DeepSkyBlue;
+	border-radius: 2px;
+	background-color: DeepSkyBlue;
+	color: white;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+textarea {
+	text-align: left;
+	background-color: #3b444b;
+	color: DeepSkyBlue;
+	border-color:#3b444b;
+	font-family: Helvetica;
+	font-size: 14px;
+}
+
+#challengeForm {
+	margin-left: 32%;
+	margin-bottom: 10px;
+	position: absolute;
+	bottom: 0;
+}
+
+#onlineUsers_Div {
+	background-color: #484848;
+	border-radius: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-bottom: 0px;
+}
+#onlineUsers_Div p {
+	text-align: center;
+	color: white;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 24px;
+
+}
