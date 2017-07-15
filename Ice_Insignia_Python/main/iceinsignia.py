@@ -4,7 +4,7 @@ from . import main
 import psycopg2
 
 conn = psycopg2.connect("dbname = 'accountsdb' user = 'postgres'"
-						"host = 'localhost' password = 'turtles'")
+						"host = 'localhost' password = 'yourPassword'")
 cur = conn.cursor()
 
 @main.route("/")
