@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ice Insignia</title>
+ 	<link rel="stylesheet" href="../static/css/login.css"/>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="/static/js/login.js"></script>
+</head>
+<body>
+	<div class="form">
+		<h1>Log in</h1>
+		<form id="loginForm" action="lobby" method="POST">
+			<input type="text" name="username" id="0" placeholder="username" required />
+			<label class="errorLabel" id="invaliduser">Invalid username</label>
+
+			<input type="password" name="password" id="1" placeholder="Password" required />
+			<label class="errorLabel" id="invalidlogin">Login information is incorrect. 
+														Try again</label>	
+			<button id="submitLoginForm">Login</button><br><br>
+		</form>
+		<a href = "{{ url_for('main.root')}} ">Go back home</a>
+		<!--TODO-->
+		<!--Make an account recovery form-->
+	</div>
+</body>
+</html>
