@@ -41,6 +41,7 @@ $(document).ready(function(){
 	socket.on('receiveChallenge', function(data) {
 		alert(data.msg + " has challenged you to a game.");
 	});
+	
 	//this method and the following on click function work together
 	$("#sendChallenge").on("click", function() {
 		var classlist = document.getElementsByClassName("active"); //returns list
@@ -81,7 +82,7 @@ $(document).ready(function(){
 		socket.emit('send_message', {msg: username + ": " + message});	
 	});
 
-
+	//Disconnect from server if user closes window
 	$(window).bind("beforeunload", function(e) {
 		//'disconnectUser' works but 'disconnect' doesn't work???
 		socket.emit('disconnectUser', {msg: username}, function() {
