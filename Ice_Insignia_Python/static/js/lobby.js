@@ -52,7 +52,6 @@ $(document).ready(function(){
 		}
 	});
 
-
 	//format for dynamically created elements
 	$(document).on("click", ".user", function() {
 		var prevSelected = document.getElementsByClassName("active");
