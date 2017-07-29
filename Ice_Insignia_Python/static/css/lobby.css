@@ -32,14 +32,14 @@ body {
 	width: 213px;
 }
 
-
 .vertical-menu button {
 	margin-left: 33%;
 }
 
 .vertical-menu a {
 	text-align: center;
-	color: white;
+	color: DeepSkyBlue;
+	font-size: 18px;
 	text-decoration: none;
 	display: block;
 	font-family: Helvetica;
@@ -50,44 +50,12 @@ body {
 
 .vertical-menu a.active {
 	background-color: DeepSkyBlue;
+	color: white;
 	font-weight: bold;
 }
 
 .vertical-menu a:hover {
 	background-color: #ccc;
-}
-
-input[type=text] {
-	border-radius: 5px;
-	padding-left: 2px;
-	width: 96%;
-	height: 25px;
-	font-family: Helvetica;
-}
-input[type=submit] {
-	margin-left: 5px;
-	border: solid DeepSkyBlue;
-	border-radius: 2px;
-	background-color: DeepSkyBlue;
-	color: white;
-	font-weight: bold;
-	font-family: Helvetica;
-}
-
-textarea {
-	text-align: left;
-	background-color: #3b444b;
-	color: DeepSkyBlue;
-	border-color:#3b444b;
-	font-family: Helvetica;
-	font-size: 14px;
-}
-
-#challengeForm {
-	margin-left: 32%;
-	margin-bottom: 10px;
-	position: absolute;
-	bottom: 0;
 }
 
 #onlineUsers_Div {
@@ -103,5 +71,61 @@ textarea {
 	font-family: Helvetica;
 	font-weight: bold;
 	font-size: 24px;
-
 }
+
+#textBox{
+	border-radius: 5px;
+	padding-left: 2px;
+	width: 96%;
+	height: 25px;
+	font-family: Helvetica;
+}
+
+#textLogWrapper button {
+	margin-left: 5px;
+	border: solid DeepSkyBlue;
+	border-radius: 2px;
+	background-color: DeepSkyBlue;
+	color: white;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+#textLogWrapper button:hover {
+	background-color: DodgerBlue;	
+}
+
+#textLogWrapper button:active {
+	transform: translateY(1px);
+}
+
+textarea {
+	text-align: left;
+	background-color: #3b444b;
+	color: DeepSkyBlue;
+	border-color:#3b444b;
+	font-family: Helvetica;
+	font-size: 14px;
+}
+
+#sendChallenge {
+	margin-left: 32%;
+	margin-bottom: 10px;
+	position: absolute;
+	bottom: 0;
+	border: solid DeepSkyBlue;
+	border-radius: 2px;
+	background-color: DeepSkyBlue;
+	color: white;
+	font-weight: bold;
+	font-family: Helvetica;	
+}
+
+#sendChallenge:hover {
+	background-color: DodgerBlue;		
+}
+
+#sendChallenge:active {
+	transform: translateY(1px);
+}
+
