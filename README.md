@@ -1,2 +1,2 @@
 # Ice-Insignia
-This project is not close to being finished. I have not written any of the actual game code and I'm in the middle of doing the chat system.
+The chat system is essentially complete. Users can connect and the list showing online users will update dynamically. New users will have their own list populated upon connection. Challenges may be sent, though, the receiver will only have an alert pop up that says who has challenged them.
