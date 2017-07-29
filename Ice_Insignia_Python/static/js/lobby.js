@@ -45,7 +45,6 @@ $(document).ready(function(){
 	//this method and the following on-click function work together
 	$("#sendChallenge").on("click", function() {
 		var classlist = document.getElementsByClassName("active"); //returns list
-
 		if(classlist.length == 1 && classlist[0].id != username) { //if user selected
 			var userToChallenge = classlist[0];
 			socket.emit('challenge', {msg: userToChallenge.id + "," + username});
@@ -58,7 +57,6 @@ $(document).ready(function(){
 	//to those with a value of 'user'
 	$(document).on("click", ".user", function() {
 		var prevSelected = document.getElementsByClassName("active");
-
 		if(prevSelected.length == 1) { //if already selected a user but want to change
 			prevSelected[0].className = "user";
 			$(this).removeClass("user");
