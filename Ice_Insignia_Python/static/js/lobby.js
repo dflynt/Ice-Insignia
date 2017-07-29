@@ -53,6 +53,9 @@ $(document).ready(function(){
 	});
 
 	//format for dynamically created elements
+	//listens for a click on a user in the #userList div
+	//users with a class of 'active' have different CSS values compared
+	//to those with a value of 'user'
 	$(document).on("click", ".user", function() {
 		var prevSelected = document.getElementsByClassName("active");
 
