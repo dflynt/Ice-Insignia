@@ -3,7 +3,6 @@ $(document).ready(function(){
 
 	//format of cookie set in login.js line 41 is: 
 	//username=x so it needs to be parsed
-
 	var username = document.cookie.substring(9, document.cookie.length);
 	var textArea = $('#textLog');
 	textArea.val("");
