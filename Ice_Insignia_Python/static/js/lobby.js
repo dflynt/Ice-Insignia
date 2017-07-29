@@ -42,7 +42,7 @@ $(document).ready(function(){
 		alert(data.msg + " has challenged you to a game.");
 	});
 	
-	//this method and the following on click function work together
+	//this method and the following on-click function work together
 	$("#sendChallenge").on("click", function() {
 		var classlist = document.getElementsByClassName("active"); //returns list
 
