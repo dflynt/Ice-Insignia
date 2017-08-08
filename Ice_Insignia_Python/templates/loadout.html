@@ -1,0 +1,170 @@
+<!Doctype HTML>
+<html>
+<head>
+  <title> Ice Insignia </title>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script src="../static/js/loadout.js"></script>
+  <link rel = "stylesheet" href = "../static/css/loadout.css">
+</head>
+
+<body>
+  <h1 id="ice">ICE INSIGNIA</h1>
+    <p style="font-size: 24px; text-align: center; color: DeepSkyBlue">
+    <br>
+    Drag and drop characters into the larger boxes.<br>
+    Drag and drop items for each character into the smaller boxes.<br>
+    If you want to change a piece, drag your new choice over the old one.<br>
+    Hit ready when you're done!<br>
+    </p>
+  <h1>CLASSES</h1>
+
+  <table id="playerOneTeamTbl" align="left">
+    <th id="playerOneName">Player one</th>
+    <tr>
+      <!--*p1charSlot and p1itemSlot to prevent players from putting items/chars in enemy slots-->
+
+      <td><div id="playerOneCharSlotOne" class="p1charSlot"></div></td>
+      <td><div id="playerOneItemSlotOne" class="p1itemSlot"></div></td>
+    </tr>
+
+    <tr>
+      <td><div id="playerOneCharSlotTwo" class="p1charSlot"></div></td>
+      <td><div id="playerOneItemSlotTwo" class="p1itemSlot"></div></td>
+    </tr>
+
+    <tr>
+      <td><div id="playerOneCharSlotThree" class="p1charSlot"></div></td>
+      <td><div id="playerOneItemSlotThree" class="p1itemSlot"></div></td>
+    </tr>
+
+    <tr>
+      <td><div id="playerOneCharSlotFour" class="p1charSlot"></div></td>
+      <td><div id="playerOneItemSlotFour" class="p1itemSlot"></div></td>
+    </tr>
+
+    <tr>
+      <td><div id="playerOneCharSlotFive" class="p1charSlot"></div></td>
+      <td><div id="playerOneItemSlotFive" class="p1itemSlot"></div></td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" id="readyBtn" align="left">Ready</button>
+      </td>
+    </tr>
+  </table>
+
+  <table id="classes" align="center">
+    <tr>
+      <td id="warrIcon" class="classIcon"><img src="../static/sprites/knight.gif"></td>
+      <td id="swordIcon" class="classIcon"><img src="../static/sprites/swordsman.gif"></td>
+      <td id="druidIcon" class="classIcon"><img src="../static/sprites/druid.gif"></td>
+      <td id="priestIcon" class="classIcon"><img src="../static/sprites/priest.gif"></td>
+      <td id="mageIcon" class="classIcon"><img src="../static/sprites/mage.gif"></td>
+    </tr>
+    <tr id="healthRow" class="stats">
+      <td>150 HP</td>
+      <td>100 HP</td>
+      <td>110 HP</td>
+      <td>75 HP</td>
+      <td>80 HP</td>      
+    </tr>
+
+    <tr id="strengthRow" class="stats">
+      <td>20 STR</td>
+      <td>30 STR</td>
+      <td>50 STR</td>
+      <td>5 STR</td>
+      <td>5 STR</td>     
+    </tr>
+
+    <tr id="defenseRow" class="stats">
+      <td>60 DEF</td>
+      <td>35 DEF</td>
+      <td>35 DEF</td>
+      <td>30 DEF</td>
+      <td>30 DEF</td>
+    </tr>  
+
+    <tr id="intRow" class="stats">
+      <td>0 INT</td>
+      <td>0 INT</td>
+      <td>25 INT</td>
+      <td>40 INT</td>
+      <td>60 INT</td>
+    </tr>
+
+    <tr id="moveRow" class="stats">
+      <td>6 MOVES</td>
+      <td>6 MOVES</td>
+      <td>5 MOVES</td>
+      <td>5 MOVES</td>
+      <td>5 MOVES</td>     
+    </tr>
+
+    <tr id="rangeRow" class="stats">
+      <td>1 RANGE</td>
+      <td>1 RANGE</td>
+      <td>3 RANGE</td>
+      <td>4 RANGE</td>
+      <td>3 RANGE</td>
+    </tr> 
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td><h1>ITEMS</h1></td>
+    </tr>
+
+    <tr>
+      <td id="bookIcon" class="itemIcon"><img src="../static/sprites/book.gif"></td>
+      <td id="bootIcon"class="itemIcon"><img src="../static/sprites/boots.gif"></td>
+      <td id="chainIcon" class="itemIcon"><img src="../static/sprites/chainmail.gif"></td>
+      <td id="eggIcon" class="itemIcon"><img src="../static/sprites/egg.gif"></td>
+      <td id="potIcon" class="itemIcon"><img src="../static/sprites/HPpot.gif"></td>
+    </tr>
+    
+    <tr>
+      <td>+50 INT</td>
+      <td>+1 MOVES</td>
+      <td>+45 DEF</td>
+      <td>+30 STR</td>
+      <td>+60 HP</td>
+    </tr>
+
+  </table>
+
+  <table id="playerTwoTeamTbl" align="right">
+    <th></th> <!--tag for spacing-->
+    <th id="playerTwoName" style="text-align: right">Player Two</th>
+    <tr>
+      <td><div id="playerTwoItemSlotOne" class="itemSlot"></div></td> 
+      <td><div id="playerTwoCharSlotOne" class="charSlot"></div></td>
+    </tr>
+    
+    <tr>
+      <td><div id="playerTwoItemSlotTwo" class="itemSlot"></div></td>
+      <td><div id="playerTwoCharSlotTwo" class="charSlot"></div></td>
+    </tr>
+    
+    <tr>
+      <td><div id="playerTwoItemSlotTwo" class="itemSlot"></div></td>
+      <td><div id="playerTwoCharSlotThree" class="charSlot"></div></td>
+    </tr>
+    
+    <tr>
+      <td><div id="playerTwoItemSlotTwo" class="itemSlot"></div></td>      
+      <td><div id="playerTwoCharSlotFour" class="charSlot"></div></td>
+    </tr>
+
+    <tr>
+      <td><div id="playerTwoItemSlotTwo" class="itemSlot"></div></td>      
+      <td><div id="playerTwoCharSlotFive" class="charSlot"></div></td>
+    </tr>
+
+
+  </table>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Registration</title>
+	<title>Ice Insignia</title>
  	<link rel="stylesheet" href="../static/css/login.css"/>
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="/static/js/registration.js"></script>
@@ -15,19 +15,19 @@
 			<label class="errorLabel" id="FName_Error">No special characters or numbers</label>
 
 			<input type="text" name="lastName" id="1" placeholder="Last Name" required />
-			<label class="errorLabel" id="LName_Error"">No special characters or numbers</label>
+			<label class="errorLabel" id="LName_Error">No special characters or numbers</label>
 
 			<input type="text" name="userName" id="2" placeholder="username" required />
-			<label class="errorLabel" id="UName_Error"">No special characters or numbers</label>
+			<label class="errorLabel" id="UName_Error">No special characters or numbers</label>
 
 			<input type="password" name="password" id="3"placeholder="Password" required />
-			<label class="errorLabel" id="UName_Error"">No special characters or numbers</label>
+			<label class="errorLabel" id="UName_Error">No special characters or numbers</label>
 
 			<input type="text" name="email" id="4" placeholder="Email" required />
-			<label class="errorLabel" id="Email_Error"">Invalid Email</label>
+			<label class="errorLabel" id="Email_Error">Invalid Email</label>
 		</form>
 		<button type="button" id="submitForm">Register</button><br><br>
-		<label>Already have an account? <a href = "{{ url_for('main.loginpage') }}">Sign in now</a></label>
+		<label>Already have an account? <a href = "{{ url_for('main.login') }}">Sign in now</a></label>
 	</div>
 </body>
 </html>
