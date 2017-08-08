@@ -12,15 +12,24 @@ def joinedGame(message):
 
 @socketio.on('selectChar', namespace='/loadout')
 def selectChar(message):
-    print(message)
-
-@socketio.on('readyUp', namespace='/loadout')
-def readyUp(message):
-    pass
+    info = message['msg'].split(",")
+    user = info[0] #user to send message to
+    htmlElem = info[1] #element that will get the picture
+    fileLoc = info[2] #source of the picture
+    emit('setCharChoice', {'html': htmlElem, 'fileLoc': fileLoc},
+                            room=user)
 
 @socketio.on('selectItem', namespace='/loadout')
 def selectItem(message):
-    print(message)
+    info = message['msg'].split(",")
+    user = info[0]
+    htmlElem = info[1]
+    fileLoc = info[2]
+    emit('setCharChoice', {'html': htmlElem, 'fileLoc': fileLoc}, 
+                            room=user)
+@socketio.on('readyUp', namespace='/loadout')
+def readyUp(message):
+    pass
 
 @socketio.on('sendMove', namespace='/game')
 def sendMove(message):
