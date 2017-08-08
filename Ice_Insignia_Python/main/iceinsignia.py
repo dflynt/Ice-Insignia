@@ -4,7 +4,7 @@ from . import main
 import psycopg2
 
 conn = psycopg2.connect("dbname = 'accountsdb' user = 'postgres'"
-						"host = 'localhost' password = 'yourPassword'")
+						"host = 'localhost' password = 'turtles'")
 cur = conn.cursor()
 
 @main.route("/")
@@ -25,7 +25,6 @@ def login():
 
 @main.route("/checklogin", methods=["POST"])
 def checkLogin():
-	print("Checking login")
 	content = request.get_json()
 	cur.execute("SELECT * FROM accountstbl"
 				" where username = %s and passw = %s",
@@ -73,8 +72,15 @@ def register():
 		print("New Account Registered: ", end="")
 		print(content)
 		return jsonify("success")
-
-@main.route("/lobby", methods=["POST"])
+		
+@main.route("/lobby", methods=["POST", "GET"])
 def lobby():
-	print("Sending user to lobby")
 	return render_template("lobby.html")
+
+@main.route('/loadout', methods=["POST", "GET"])
+def loadout():
+	return render_template("loadout.html")
+
+@main.route('/game', methods=["POST", "GET"])
+def game():
+	return render_template("game.html")

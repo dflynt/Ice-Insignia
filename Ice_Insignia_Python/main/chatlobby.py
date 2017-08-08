@@ -8,7 +8,7 @@ clientsDict = {} #dictionary instead of list for easy class information access. 
 clientsList = [] #list for sending connected usernames to new client
 				 #because it's not easy to send a dictionary through json
 
-@socketio.on('joined', namespace='/lobby')
+@socketio.on('joinedChatLobby', namespace='/lobby')
 #Previously had a TypeError saying I wasn't providing the message positional
 #argument but I was. Still confused on that.
 def joinServer(message):
@@ -17,7 +17,7 @@ def joinServer(message):
 	clientsList.append(username)
 	join_room(username) #newly connected client has their own 
 						#room for sending challenges/specific messages
-						#Example below in the emit('showUsersList') line
+						#Example below in line 28
 
 	emit('printmessage', {'msg': username + " connected to server."}, broadcast=True)
 
@@ -36,12 +36,29 @@ def sendMessage(message):
 @socketio.on('challenge', namespace='/lobby')
 def sendChallenege(message):
 	players = message['msg'].split(",")
-	receiver = players[0]
-	sender = players[1]
+	receiver = players[0] #who received the message
+	sender = players[1] #who sent the message
 	print(sender + " sent a challenge to " + receiver)
 
 	#send a challenge message to the one being challenged
 	emit('receiveChallenge', {'msg': sender}, room=receiver)
+
+@socketio.on('acceptChallenge', namespace='/lobby')
+def acceptChallenge(message):
+	players = message['msg'].split(",") ##weaboutthatcopyandpastelife
+	sender = players[0] #who received the challenge
+	receiver = players[1] #who sent the challenge
+	emit('receiveChallenge_RESULT', {'msg': receiver + " has accepted your challenege.",
+		 'bool': "true"}, room=sender)
+	
+
+@socketio.on('declineChallenge', namespace='/lobby')
+def declineChallenge(message):
+	players = message['msg'].split(",") ##steadypastin'
+	sender = players[0]
+	receiver = players[1]
+	emit('receiveChallenge_RESULT', {'msg': receiver + " has declined your challenege.",
+		 'bool': "false"}, room=sender)
 
 #disconnectUser works but disconnect doesn't?
 @socketio.on('disconnectUser', namespace='/lobby')
@@ -64,4 +81,4 @@ class Client:
 	def getUsername():
 		return self.username
 	def getSocketID():
-		return self.socketID74  
+		return self.socketID
