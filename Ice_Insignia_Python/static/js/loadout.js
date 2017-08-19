@@ -120,16 +120,21 @@ $(document).ready(function() {
     socket.on('startCountdown', function(data) {
         var mapNumber = data.msg; //load the map decided by the server
         document.cookie = "mapNumber=" + mapNumber;
-        var countDownVar = setInterval(countdownFunc, 1000); //update every second
 
         var p1Table = document.getElementById("playerOneTeamTbl");
-        var p2Table = document.getElementById("PlayerTwoTeamTbl");
+        var p2Table = document.getElementById("playerTwoTeamTbl");
 
         var p1CharCounter, p1ItemCounter, 
             p2CharCounter, p2ItemCounter = 1;
 
-        p1Table.find("td").each(function() {
-            if($(this).class().equals("p1charSlot")) {
+        $("#playerOneTeamTbl tr").each(function() {
+            $(this).find("td").each(function() {
+                var item = $(this).children().children().children().attr("src");
+                alert(item);
+            })
+
+            /*
+            if($(this).attr("class").equals("p1charSlot")) {
                 var item = $(this).children().children().children().src;
                                             //td > div > td > img
                 document.cookie = "p1char" + p1CharCounter + "="  + item;
@@ -140,10 +145,17 @@ $(document).ready(function() {
                 document.cookie = "p1item" + p1ItemCounter + "="  + item;
                 p1ItemCounter += 1;
             }
+            */
         });
 
-        p2Table.find("td").each( function() {
-            if($(this).class().equals("p2charSlot")) {
+        $("#playerTwoTeamTbl tr").each( function() {
+            $(this).find("td").each(function() {
+                var item = $(this).children().children().attr("src");
+                alert(item);
+            })
+
+            /*
+            if($(this).attr("class").equals("p2charSlot")) {
                 var item = $(this).children().src;
                 document.cookie = "p2char" + p2CharCounter + "="  + item;
                 p2CharCounter += 1;
@@ -153,7 +165,10 @@ $(document).ready(function() {
                 document.cookie = "p2item" + p2ItemCounter + "=" + item;
                 p2ItemCounter += 1;
             }
+            */
         });
+        
+        var countDownVar = setInterval(countdownFunc, 1000); //update every second
     })
 
     function countdownFunc() {
@@ -166,7 +181,7 @@ $(document).ready(function() {
         timeLeft -= 1;
         if(timeLeft == 0) {
             //set cookies
-
+            alert(document.cookie);
             window.location = "/game";
         }
     }
